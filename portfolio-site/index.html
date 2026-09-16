@@ -7,16 +7,57 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Шапка з іменем і навігацією по розділах -->
-     
-    <!-- Блок «Про мене» -->
+    <header>
 
-    <!-- Галерея робіт (набір карток проєктів) -->
+    <h1>Портфоліо Кирилл</h1>
 
-    <!-- Блок контактів -->
+    <nav>
+        <a href="#about">Про мене</a>
+        <a href="#projects">Роботи</a>
+        <a href="#contacts">Контакти</a>
+    </nav>
+    </header>
 
-    <!-- Підвал -->
+    <main>
+        <section id="about">
+            <h2>Про мене</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at tincidunt orci. Quisque dui urna, viverra non purus eget, cursus aliquet lectus. Fusce faucibus turpis nec nulla tincidunt tempor. Nunc fringilla, lacus bibendum auctor scelerisque, lorem nulla aliquam nisl, id bibendum quam quam a libero. Ut sit amet molestie tellus. Praesent id augue et ante malesuada tristique vitae a arcu. Vivamus in lobortis risus, quis rhoncus est. Nulla molestie ac massa at porta. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam aliquam lobortis venenatis. Vivamus enim dolor, sagittis vitae massa vitae, consequat dapibus orci. In a ornare augue, a efficitur ex. Nullam et est vel sem rhoncus varius.</p>
+        </section>
 
+        <section id="projects">
+            <h2>Роботи</h2>
+
+            <article>
+                <h3>Назва першого проєкту</h3>
+                <img src="assets/img/boss.jpg" height="200px" width="300px" alt="Фотографія першого проєкту">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            </article>
+
+            <article>
+                <h3>Назва дургого проєкту</h3>
+                <img src="assets/img/boss.jpg" height="200px" width="300px" alt="Фотографія дургого проєкту">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            </article>
+
+        </section>
+
+        <aside>
+            <h2>Навички</h2>
+            <ul>
+                <li>HTML5 / CSS3</li>
+                <li>C#</li>
+                <li>Git</li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer id = "contacts">
+        <h2>Контакти</h2>
+        <label for="user-email">Ваш Email для зворотьного зв'язку:</label>
+        <input type="email" id="user-email">
+        <p>Email: example@edu.kpi.ua</p>
+        <p>&copy; 2026. Всі права захощено.</p>
+    </footer>
     <script src="js/app.js"></script>
 </body>
 </html>
