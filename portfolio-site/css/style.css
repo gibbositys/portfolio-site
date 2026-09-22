@@ -1,0 +1,82 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #fdfdfd;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-bottom: 1px solid #cccccc;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #000000;
+}
+
+header nav a {
+    margin-right: 1rem;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+section {
+    margin-bottom: 2.5rem;
+}
+
+article {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+article img {
+    width: 100%;
+    display: block;
+}
+
+article h3,
+article p {
+    padding: 0 1rem;
+}
+
+article p {
+    padding-bottom: 1rem;
+}
+
+aside {
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+aside ul {
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+aside li {
+    margin-bottom: 0.4rem;
+}
+
+footer {
+    padding: 2rem 1rem;
+    font-size: 0.875rem;
+    color: #666666;
+    border-top: 1px solid #e0e0e0;
+}
