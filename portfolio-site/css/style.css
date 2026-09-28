@@ -36,24 +36,24 @@ section {
     margin-bottom: 2.5rem;
 }
 
-article {
+.card {
     border: 1px solid #e0e0e0;
     border-radius: 6px;
     overflow: hidden;
     margin-bottom: 1.5rem;
 }
 
-article img {
+.card img {
     width: 100%;
     display: block;
 }
 
-article h3,
-article p {
+.card h3,
+.card p {
     padding: 0 1rem;
 }
 
-article p {
+.card p {
     padding-bottom: 1rem;
 }
 
