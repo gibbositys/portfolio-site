@@ -173,3 +173,7 @@ footer {
         max-width: 1100px;
     }
 }
+
+.hidden {
+    display: none;
+}

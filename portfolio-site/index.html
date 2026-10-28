@@ -28,28 +28,43 @@
         <section id="projects">
             <h2>Роботи</h2>
 
-            <div class="cards">
-            <article class="card">
-                <h3>Веб-сайт книжкового магазину</h3>
-                <img src="assets/img/boss.jpg" alt="Фотографія першого проєкту">
-                <p>Адаптивний лендінг із каталогом видань, пошуком та кошиком замовлень на чистому HTML і CSS.</p>
-            </article>
+            <!-- Форма додавання нового проекту -->
+             <form id="add-project-form">
+                <h3>Додати нову роботу</h3>
+                <div>
+                    <label for="project-title">Назва роботи:</label>
+                    <input type="text" name="title" id="project-title" required>
+                </div>
+                <div>
+                    <label for="project-year">Рік Створення</label>
+                    <input type="number" name="year" id="project-year" min="2000" required>
+                </div>
+                <div>
+                    <label for="project-category">Категорія:</label>
+                    <select name="category" id="project-category" required>
+                        <option value="Web">Web</option>
+                        <option value="Desktop">Desktop</option>
+                        <option value="Console">Console</option>
+                        <option value="Design">Design</option>
+                    </select>
+                </div>
+                <button type="submit">Додати роботу</button>
+             </form>
 
-            <article class="card">
-                <h3>Десктопний застосунок на C#</h3>
-                <img src="assets/img/pug.jpg" alt="Фотографія другого проєкту">
-                <p>Клієнтський застосунок для автоматизації обліку з графічним інтерфейсом на WPF і патерном MVVM.</p>
-            </article>
-
-            <article class="card">
-                <h3>Консольний трекер завдань</h3>
-                <img src="assets/img/pug2.jpg" alt="Фотографія третього проєкту">
-                <p>Консольний застосунок для структурування завдань з підтримкою фільтрації та збереження даних у JSON.</p>
-            </article>
-            </div>
-
-        </section>
-
+             <!-- Блок фільтрації -->
+              <div class="filter-block">
+                <label for="filter-category">Фільтр за категорією:</label>
+                <select id="filter-category">
+                    <option value="all">Усі категорії</option>
+                    <option value="Web">Web</option>
+                    <option value="Desktop">Desktop</option>
+                    <option value="Console">Console</option>
+                    <option value="Design">Design</option>
+                </select>
+              </div>
+            
+            <p id="projects-count">Кількість робіт: 0</p>
+            <div id="gallery" class="cards"></div>
         <aside>
             <h2>Навички</h2>
             <ul>
