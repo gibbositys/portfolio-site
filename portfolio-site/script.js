@@ -51,29 +51,33 @@ const yearInput = document.querySelector('#project-year');
 const filterCategorySelect = document.querySelector('#filter-category');
 
 function renderPortfolio(works) {
+    if (!listContainer) return;
     listContainer.innerHTML = '';
 
     for (const work of works) {
         const card = document.createElement('article');
         card.classList.add('card');
-        card.dataset.year = work.year;
-        card.dataset.category = work.category;
+        card.dataset.id = work.id;
 
         const title = document.createElement('h3');
         title.textContent = work.title;
 
         const img = document.createElement('img');
-        img.src = 'assets/img/boss.jpg';
-        img.alt = work.title;
+        img.src = work.thumbnailUrl || 'assets/img/boss.jpg';
+        img.alt = work.title || 'Зображення роботи';
 
-        const year = document.createElement('p');
-        year.textContent = `Рік: ${work.year} (${work.category})`;
+        const info = document.createElement('p');
+        if (work.id) {
+            info.textContent = `Робота №${work.id} (з API)`;
+        } else {
+            info.textContent = `Рік: ${work.year} (${work.category})`;
+        }
 
-        if (isRecent(work.year)) {
+        if (work.year && isRecent(work.year)) {
             card.classList.add('recent');
         }
 
-        card.append(title, img, year);
+        card.append(title, img, info);
         listContainer.append(card);
     }
 
@@ -136,3 +140,70 @@ if (filterCategorySelect) {
         });
     });
 }
+
+const loadingStateElemnt = document.querySelector('#loading-state');
+
+function showLoading(isLoading) {
+    if (!loadingStateElemnt) return;
+    loadingStateElemnt.classList.toggle('hidden', !isLoading);
+}
+
+const errorMessageElemnt = document.querySelector('#error-message');
+
+function showError(message) {
+    if (!errorMessageElemnt) return;
+    if (message) {
+        errorMessageElemnt.textContent = message;
+        errorMessageElemnt.classList.remove('hidden');
+    } else {
+        errorMessageElemnt.textContent = '';
+        errorMessageElemnt.classList.add('hidden');
+    }
+}
+
+// Практична робота №9: Отримання робіт з API JSONPlaceholder (Варіант 2: Photos)
+// Ендпоінт: https://jsonplaceholder.typicode.com/photos?albumId=1
+const API_URL = 'https://jsonplaceholder.typicode.com/photos?albumId=1';
+
+async function loadPortfolioData() {
+    showLoading(true);
+    showError('');
+
+    try {
+        const responce = await fetch(API_URL);
+
+        if (!responce.ok) {
+            if (responce.status === 404) {
+                throw new Error('Альбом не знайдено');
+            }
+            throw new Error(`Сервер відповів кодом ${responce.status}`);
+        }
+
+        const data = await responce.json();
+        renderPortfolio(data);
+    } catch (error) {
+        console.error('Помилка завантаження даних:', error);
+
+        if (error.message === 'Альбом не знайдено') {
+            showError('Альбом не знайдено');
+        } else {
+            showError('Не вдалося завантажити дані. Спробуйте пізніше.');
+        }
+
+        if (listContainer) listContainer.innerHTML = '';
+        if (projectsCountElement) projectsCountElement.textContent = 'Кількість робіт: 0';
+    } finally {
+        showLoading(false);
+    }
+}
+
+// Кнопка повторного запиту даних
+const refreshBtn = document.querySelector('#refresh-btn');
+
+if (refreshBtn) {
+    refreshBtn.addEventListener('click', () => {
+        loadPortfolioData();
+    });
+}
+
+loadPortfolioData();

@@ -62,9 +62,16 @@
                     <option value="Design">Design</option>
                 </select>
               </div>
+
+              <p id="loading-state" class="hidden">Завантаження даних...</p>
+              <p id="error-message" class="hidden" style="color: red; font-weight: bold;"></p>
+
+              <!-- Кнопка оновлення даних -->
+               <button type="button" id="refresh-btn">Оновити дані</button>
             
             <p id="projects-count">Кількість робіт: 0</p>
             <div id="gallery" class="cards"></div>
+        </section>
         <aside>
             <h2>Навички</h2>
             <ul>
