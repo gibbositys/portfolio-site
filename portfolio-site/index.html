@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфоліо Кирилл Рулла</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="script.js" defer></script>
+
+    <!--Підключення React та Babel-->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" src="script.js"></script>
 </head>
 <body>
     <header>
@@ -69,8 +75,8 @@
               <!-- Кнопка оновлення даних -->
                <button type="button" id="refresh-btn">Оновити дані</button>
             
-            <p id="projects-count">Кількість робіт: 0</p>
-            <div id="gallery" class="cards"></div>
+            <!-- Контейнер для монтування React-застосунку -->>
+            <div id="portfolio-app"></div>
         </section>
         <aside>
             <h2>Навички</h2>
