@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!--Підключення React та Babel-->
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
 
-    <script type="text/babel" src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -76,7 +76,9 @@
                <button type="button" id="refresh-btn">Оновити дані</button>
             
             <!-- Контейнер для монтування React-застосунку -->>
-            <div id="portfolio-app"></div>
+            <!-- <div id="portfolio-app"></div> -->
+             <p id="projects-count">Кількість робіт: 0</p>
+             <div class="cards" id="gallery"></div>
         </section>
         <aside>
             <h2>Навички</h2>
