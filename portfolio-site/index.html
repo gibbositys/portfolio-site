@@ -15,14 +15,13 @@
 </head>
 <body>
     <header>
+        <h1>Портфоліо Кирилл</h1>
 
-    <h1>Портфоліо Кирилл</h1>
-
-    <nav>
-        <a href="#about">Про мене</a>
-        <a href="#projects">Роботи</a>
-        <a href="#contacts">Контакти</a>
-    </nav>
+        <nav>
+            <a href="#about">Про мене</a>
+            <a href="#projects">Роботи</a>
+            <a href="#contacts">Контакти</a>
+        </nav>
     </header>
 
     <main>
@@ -35,7 +34,7 @@
             <h2>Роботи</h2>
 
             <!-- Форма додавання нового проекту -->
-             <form id="add-project-form">
+            <form id="add-project-form">
                 <h3>Додати нову роботу</h3>
                 <div>
                     <label for="project-title">Назва роботи:</label>
@@ -55,10 +54,10 @@
                     </select>
                 </div>
                 <button type="submit">Додати роботу</button>
-             </form>
+            </form>
 
-             <!-- Блок фільтрації -->
-              <div class="filter-block">
+            <!-- Блок фільтрації -->
+            <div class="filter-block">
                 <label for="filter-category">Фільтр за категорією:</label>
                 <select id="filter-category">
                     <option value="all">Усі категорії</option>
@@ -67,19 +66,24 @@
                     <option value="Console">Console</option>
                     <option value="Design">Design</option>
                 </select>
-              </div>
+            </div>
 
-              <p id="loading-state" class="hidden">Завантаження даних...</p>
-              <p id="error-message" class="hidden" style="color: red; font-weight: bold;"></p>
+            <p id="loading-state" class="hidden">Завантаження даних...</p>
+            <p id="error-message" class="hidden" style="color: red; font-weight: bold;"></p>
 
-              <!-- Кнопка оновлення даних -->
-               <button type="button" id="refresh-btn">Оновити дані</button>
+            <!-- Кнопка оновлення даних -->
+            <button type="button" id="refresh-btn">Оновити дані</button>
             
-            <!-- Контейнер для монтування React-застосунку -->>
+            <!-- Контейнер для монтування React-застосунку -->
             <!-- <div id="portfolio-app"></div> -->
-             <p id="projects-count">Кількість робіт: 0</p>
-             <div class="cards" id="gallery"></div>
+
+            <div class="gallery-controls">
+                <p id="projects-count">Кількість робіт: 0</p>
+                <button type="button" id="toggle-animation-btn">Пауза анімації</button>
+            </div>
+            <div class="cards" id="gallery"></div>
         </section>
+
         <aside>
             <h2>Навички</h2>
             <ul>
@@ -90,7 +94,7 @@
         </aside>
     </main>
 
-    <footer id = "contacts">
+    <footer id="contacts">
         <h2>Контакти</h2>
         <label for="user-email">Ваш Email для зворотьного зв'язку:</label>
         <input type="email" id="user-email">

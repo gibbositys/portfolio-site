@@ -177,3 +177,41 @@ footer {
 .hidden {
     display: none !important;
 }
+
+/* Плавна поява карток портфоліо через @keyframes */
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card--animated {
+    opacity: 0;
+    animation: cardFadeIn 0.45s ease-out forwards;
+}
+
+/* Керування призупиненням CSS-анімації */
+.animations-paused .card--animated {
+    animation-play-state: paused;
+}
+
+/* Обгортка та плавне масштабування зображення при наведенні */
+.card-img-wrap {
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.card-img-wrap img {
+    display: block;
+    width: 100%;
+    transition: transform 0.35s ease;
+}
+
+.card:hover .card-img-wrap img {
+    transform: scale(1.07);
+}
